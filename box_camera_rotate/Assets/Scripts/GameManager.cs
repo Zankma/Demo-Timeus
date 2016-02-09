@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
-    // Use this for initialization
+    // Use this for initialization Polla
 
     static GameManager instance;
     public GameObject Enemigo;
