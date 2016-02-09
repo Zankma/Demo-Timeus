@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
     // Use this for initialization
+	// HOLA CARAJOO
 
     static GameManager instance;
     public GameObject Enemigo;
