@@ -4,8 +4,12 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
+<<<<<<< HEAD
     // Use this for initialization
 	// HOLA CARAJOO
+=======
+    // Use this for initialization Polla
+>>>>>>> origin/master
 
     static GameManager instance;
     public GameObject Enemigo;
