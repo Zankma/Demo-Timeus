@@ -16,7 +16,7 @@ public class RotateCameraClass : MonoBehaviour {
 	const float ROTATION_QUANTITY = 90.0f;
 
 
-	public float speedRotation = 10;
+	public float speedRotation = 15;
 
 	// working variables
 

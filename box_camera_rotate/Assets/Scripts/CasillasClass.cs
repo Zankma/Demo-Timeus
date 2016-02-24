@@ -8,14 +8,14 @@ public class CasillasClass : MonoBehaviour {
 
 
     static GameManager instance;
-    public GameObject Enemigo;
+    public GameObject Enemigo;                            
     GameObject aux;
     Vector3 guardarPosicion;
     Transform posicion;
     Quaternion guardarRotacion;
     int i;
 	List<Vector3> posiciones;
-    public static List<GameObject> enemigos = new List<GameObject>();
+    public List<GameObject> enemigos = new List<GameObject>();
     int a;
     int guardarRandom;
     EnemigoScript enemigoDestruido;
@@ -137,34 +137,31 @@ public class CasillasClass : MonoBehaviour {
     public void crearEnemigo()
     {
 
-        /* for(int i=0; i<enemigos.Count; i++)
+		/* for(int i=0; i<enemigos.Count; i++)
          {
          }*/
 
 		int polla = generarplano (posiciones.Count);
 
-        guardarPosicion = posiciones[polla];
+		guardarPosicion = posiciones [polla];
 		posiciones.Remove (guardarPosicion);
 		Quaternion rotasion = Quaternion.identity;
-		if(Mathf.Abs(guardarPosicion.x)== 0.55f)
-		{
-			rotasion.SetFromToRotation(Vector3.right,Vector3.forward);
+		if (Mathf.Abs (guardarPosicion.x) == 0.55f) {
+			rotasion.SetFromToRotation (Vector3.right, Vector3.forward);
 		}
 
-		if(Mathf.Abs(guardarPosicion.y)== 10.55f)
-		{
-			rotasion.SetFromToRotation(Vector3.up,Vector3.forward);
+		if (Mathf.Abs (guardarPosicion.y) == 10.55f) {
+			rotasion.SetFromToRotation (Vector3.up, Vector3.forward);
 		}
 
-		if(Mathf.Abs(guardarPosicion.y)== 9.45f)
-		{
-			rotasion.SetFromToRotation(Vector3.up,Vector3.forward);
+		if (Mathf.Abs (guardarPosicion.y) == 9.45f) {
+			rotasion.SetFromToRotation (Vector3.up, Vector3.forward);
 		}
 
-        enemigos.Add(Instantiate(Enemigo, guardarPosicion, rotasion) as GameObject);
+		enemigos.Add (Instantiate (Enemigo, guardarPosicion, rotasion) as GameObject);
 
-      
-        
+
+       
 
     }
 
@@ -188,11 +185,20 @@ public class CasillasClass : MonoBehaviour {
         while (enemigos.Count < 54)
         {
      
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(3);
 
             for (i = 0; i < 9 ; i++)
             {
                 crearEnemigo();
+
+			/*	if (enemigoDestruido.recibirBool()) {
+					
+					enemigoDestruido.GetComponentInParent<Transform>().localScale=new Vector3(1f,1f,1f);
+					enemigoDestruido.GetComponentInParent<SpriteRenderer>().color= Color.red;
+					
+					
+				}*/
+
                 
             }
             Debug.Log("Llego");
